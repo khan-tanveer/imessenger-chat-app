@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import { Button, FormControl, Input, InputLabel } from "@material-ui/core";
 import Message from "./Messages";
@@ -6,20 +6,30 @@ import Message from "./Messages";
 function App() {
   const [input, setInput] = useState("");
   console.log(input);
-  const [messages, setMessages] = useState(["hello", "Khan", "Tanveer"]);
+  const [messages, setMessages] = useState([
+    { username: "soonny", text: "hey guys" },
+    { username: "qazi", text: "whatsupp" },
+  ]);
   console.log(messages);
   const [username, setUsername] = useState("");
 
+  useEffect(() => {
+    // prompt("please enter your name");
+    setUsername(prompt("please enter your name"));
+  }, []);
+
   const sendMessage = (e) => {
     e.preventDefault();
-    //all the logic to send the message goes
-    setMessages([...messages, input]);
+    //All the logic to send the message goes
+    setMessages([...messages, { username: username, text: input }]);
     setInput("");
   };
 
   return (
     <div className="App">
       <h1>hello Khan Tanveer</h1>
+      <h2>welcome {username}</h2>
+
       <form>
         <FormControl>
           <InputLabel>Enter a message...</InputLabel>
@@ -31,7 +41,7 @@ function App() {
             type="submit"
             onClick={sendMessage}
           >
-            Send Message{" "}
+            Send Message
           </Button>
         </FormControl>
       </form>
@@ -39,7 +49,7 @@ function App() {
       {/* messenges themselves */}
 
       {messages.map((message) => (
-        <Message text={message} />
+        <Message username={message.username} text={message.text} />
       ))}
     </div>
   );
