@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import { Button, FormControl, Input, InputLabel } from "@material-ui/core";
 import Message from "./Messages";
+import db from "./firebase";
 
 function App() {
   const [input, setInput] = useState("");
@@ -12,6 +13,11 @@ function App() {
   ]);
   console.log(messages);
   const [username, setUsername] = useState("");
+
+  useEffect(() => {
+    //run when apps components loads
+    db.collection("messages").onSnapshot(snapshot =>);
+  }, []);
 
   useEffect(() => {
     // prompt("please enter your name");
