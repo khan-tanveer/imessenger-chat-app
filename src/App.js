@@ -8,16 +8,18 @@ function App() {
   const [input, setInput] = useState("");
   console.log(input);
   const [messages, setMessages] = useState([
-    { username: "soonny", text: "hey guys" },
-    { username: "qazi", text: "whatsupp" },
+    { username: "soonny", message: "hey guys" },
+    { username: "qazi", message: "whatsupp" },
   ]);
   console.log(messages);
   const [username, setUsername] = useState("");
 
+  // console.log(setMessage());
+
   useEffect(() => {
     //run when apps components loads
     db.collection("messages").onSnapshot((snapshot) => {
-      setMessages(snapshot.docs.map());
+      setMessages(snapshot.docs.map((doc) => doc.data()));
     });
   }, []);
 
@@ -57,7 +59,7 @@ function App() {
       {/* messenges themselves */}
 
       {messages.map((message) => (
-        <Message username={username} message={message} />
+        <Message username={username} message={message.message} />
       ))}
     </div>
   );
