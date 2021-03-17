@@ -16,7 +16,9 @@ function App() {
 
   useEffect(() => {
     //run when apps components loads
-    db.collection("messages").onSnapshot(snapshot =>);
+    db.collection("messages").onSnapshot((snapshot) => {
+      setMessages(snapshot.docs.map());
+    });
   }, []);
 
   useEffect(() => {
