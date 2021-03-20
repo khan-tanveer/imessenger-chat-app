@@ -58,8 +58,8 @@ function App() {
         // src="https://www.google.com/search?q=messenger+logo&rlz=1C1VDKB_enIN933IN934&sxsrf=ALeKk02HxyzAsdXzsYlueq6WTegxP6lmjA:1616172985534&tbm=isch&source=iu&ictx=1&fir=7biovthj0flNnM%252C0HZmDZnxo4SNDM%252C_&vet=1&usg=AI4_-kTBVY7tG-ojgA3ATWUYZjc-cfOfEg&sa=X&ved=2ahUKEwjZysrF6bzvAhXLAnIKHVbTCa8Q9QF6BAgEEAE#imgrc=7biovthj0flNnM"
         alt="messenger-logo"
       />
-      <h1>hello Khan Tanveer</h1>
-      <h2>welcome {username}</h2>
+      <h1 style={{ color: "#2ed573" }}>Hello made with love by Khan Tanveer</h1>
+      <h2 style={{ color: "#f7d794" }}>welcome {username}</h2>
 
       <form className="app__form">
         <FormControl className="app__formControl">
