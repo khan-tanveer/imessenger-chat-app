@@ -5,6 +5,8 @@ import Messages from "./Messages";
 import db from "./firebase";
 import firebase from "firebase";
 import FlipMove from "react-flip-move";
+import SendIcon from "@material-ui/icons/Send";
+import { IconButton } from "@material-ui/core";
 
 function App() {
   const [input, setInput] = useState("");
@@ -51,10 +53,15 @@ function App() {
 
   return (
     <div className="App">
+      <img
+        src="https://facebookbrand.com/wp-content/uploads/2018/09/Header-e1538151782912.png?w=100&h=100"
+        // src="https://www.google.com/search?q=messenger+logo&rlz=1C1VDKB_enIN933IN934&sxsrf=ALeKk02HxyzAsdXzsYlueq6WTegxP6lmjA:1616172985534&tbm=isch&source=iu&ictx=1&fir=7biovthj0flNnM%252C0HZmDZnxo4SNDM%252C_&vet=1&usg=AI4_-kTBVY7tG-ojgA3ATWUYZjc-cfOfEg&sa=X&ved=2ahUKEwjZysrF6bzvAhXLAnIKHVbTCa8Q9QF6BAgEEAE#imgrc=7biovthj0flNnM"
+        alt="messenger-logo"
+      />
       <h1>hello Khan Tanveer</h1>
       <h2>welcome {username}</h2>
 
-      <form>
+      <form className="app__form">
         <FormControl>
           <InputLabel>Enter a Message...</InputLabel>
           <Input value={input} onChange={(e) => setInput(e.target.value)} />
